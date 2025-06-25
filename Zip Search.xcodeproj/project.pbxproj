@@ -35,7 +35,7 @@
 		A01234567890ABC2 = {
 			isa = PBXGroup;
 			children = (
-				A01234567890ABCD /* Zip Search */,
+				A01234567890ABDB /* Zip Search */,
 				A01234567890ABCC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,7 +48,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A01234567890ABCD /* Zip Search */ = {
+		A01234567890ABDB /* Zip Search */ = {
 			isa = PBXGroup;
 			children = (
 				A01234567890ABCE /* App.swift */,
