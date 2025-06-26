@@ -55,6 +55,7 @@ struct ContentView: View {
                 .background(isValidPostalCode(viewStore.postalCode) && !viewStore.isLoading ? Color.blue : Color.gray)
                 .cornerRadius(8)
                 .disabled(!isValidPostalCode(viewStore.postalCode) || viewStore.isLoading)
+                .buttonStyle(.plain)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("結果")

@@ -36,7 +36,7 @@ public class ZipApi {
                             フリガナ: \(result.kana1) \(result.kana2) \(result.kana3)
                             """
                         }
-                        let resultText = resultTexts.joined(separator: "\n")
+                        let resultText = resultTexts.joined(separator: "\n\n")
                         continuation.resume(returning: resultText)
                     } else {
                         continuation.resume(returning: "該当する住所が見つかりませんでした")
