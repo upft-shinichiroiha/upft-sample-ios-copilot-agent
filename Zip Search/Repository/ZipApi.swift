@@ -29,12 +29,14 @@ public class ZipApi {
                     if postalCodeResponse.status == 200,
                        let results = postalCodeResponse.results,
                        !results.isEmpty {
-                        let result = results[0]
-                        let resultText = """
-                        郵便番号: \(result.zipcode)
-                        住所: \(result.address1) \(result.address2) \(result.address3)
-                        フリガナ: \(result.kana1) \(result.kana2) \(result.kana3)
-                        """
+                        let resultTexts = results.map { result in
+                            """
+                            郵便番号: \(result.zipcode)
+                            住所: \(result.address1) \(result.address2) \(result.address3)
+                            フリガナ: \(result.kana1) \(result.kana2) \(result.kana3)
+                            """
+                        }
+                        let resultText = resultTexts.joined(separator: "\n")
                         continuation.resume(returning: resultText)
                     } else {
                         continuation.resume(returning: "該当する住所が見つかりませんでした")
