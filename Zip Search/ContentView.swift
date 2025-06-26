@@ -45,17 +45,19 @@ struct ContentView: View {
                             Text("検索中...")
                                 .foregroundColor(.white)
                         }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
                     } else {
                         Text("送信")
                             .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 50)
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
                 .background(isValidPostalCode(viewStore.postalCode) && !viewStore.isLoading ? Color.blue : Color.gray)
                 .cornerRadius(8)
                 .disabled(!isValidPostalCode(viewStore.postalCode) || viewStore.isLoading)
-                .buttonStyle(.plain)
+                .buttonStyle(.automatic)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("結果")
