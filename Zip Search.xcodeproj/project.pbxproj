@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48FF738BACB64A10A1920D30 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 48FF738BACB64A10A1920D31 /* ComposableArchitecture */; };
+		4B5648E16E7D499E8AFF6703 /* ZipSearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DB8A14E9E4E7B8538726E /* ZipSearchFeature.swift */; };
 		A01234567890ABCD /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABCE /* App.swift */; };
 		A01234567890ABCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABD0 /* ContentView.swift */; };
 		A01234567890ABD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A01234567890ABD2 /* Assets.xcassets */; };
 		A01234567890ABD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A01234567890ABD4 /* Preview Assets.xcassets */; };
+		A6AEB150C3944834B58B8F6D /* ZipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F1245BC2F44F7A14955FF /* ZipResponse.swift */; };
+		CC82162EDB704B9F87E042D1 /* ZipApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8388CE5747C19B90DDF2 /* ZipApi.swift */; };
+		F66DEC50D49449C7A33DAC67 /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = F66DEC50D49449C7A33DAC68 /* SwiftSyntax */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7AEF8388CE5747C19B90DDF2 /* ZipApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipApi.swift; sourceTree = "<group>"; };
 		A01234567890ABCB /* Zip Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zip Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01234567890ABCE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		A01234567890ABD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A01234567890ABD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A01234567890ABD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A06DB8A14E9E4E7B8538726E /* ZipSearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipSearchFeature.swift; sourceTree = "<group>"; };
+		D34F1245BC2F44F7A14955FF /* ZipResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +34,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FF738BACB64A10A1920D30 /* ComposableArchitecture in Frameworks */,
+				F66DEC50D49449C7A33DAC67 /* SwiftSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73CE23E8F3C9466385F63626 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AEF8388CE5747C19B90DDF2 /* ZipApi.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		73CE23E8F3C9466385F63627 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A06DB8A14E9E4E7B8538726E /* ZipSearchFeature.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7C7E302880FC4449A1E0FE62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D34F1245BC2F44F7A14955FF /* ZipResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A01234567890ABC2 = {
 			isa = PBXGroup;
 			children = (
@@ -48,23 +82,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A01234567890ABDB /* Zip Search */ = {
-			isa = PBXGroup;
-			children = (
-				A01234567890ABCE /* App.swift */,
-				A01234567890ABD0 /* ContentView.swift */,
-				A01234567890ABD2 /* Assets.xcassets */,
-				A01234567890ABD5 /* Preview Content */,
-			);
-			path = "Zip Search";
-			sourceTree = "<group>";
-		};
 		A01234567890ABD5 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 				A01234567890ABD4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A01234567890ABDB /* Zip Search */ = {
+			isa = PBXGroup;
+			children = (
+				A01234567890ABCE /* App.swift */,
+				A01234567890ABD0 /* ContentView.swift */,
+				73CE23E8F3C9466385F63626 /* Repository */,
+				7C7E302880FC4449A1E0FE62 /* Model */,
+				73CE23E8F3C9466385F63627 /* Features */,
+				A01234567890ABD2 /* Assets.xcassets */,
+				A01234567890ABD5 /* Preview Content */,
+			);
+			path = "Zip Search";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +120,10 @@
 			dependencies = (
 			);
 			name = "Zip Search";
+			packageProductDependencies = (
+				48FF738BACB64A10A1920D31 /* ComposableArchitecture */,
+				F66DEC50D49449C7A33DAC68 /* SwiftSyntax */,
+			);
 			productName = "Zip Search";
 			productReference = A01234567890ABCB /* Zip Search.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +152,10 @@
 				Base,
 			);
 			mainGroup = A01234567890ABC2;
+			packageReferences = (
+				E2A3190E9D034BEA90016441 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				8F1359020EF84B05B89944FC /* XCRemoteSwiftPackageReference "swift-syntax" */,
+			);
 			productRefGroup = A01234567890ABCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +184,9 @@
 			files = (
 				A01234567890ABCF /* ContentView.swift in Sources */,
 				A01234567890ABCD /* App.swift in Sources */,
+				CC82162EDB704B9F87E042D1 /* ZipApi.swift in Sources */,
+				A6AEB150C3944834B58B8F6D /* ZipResponse.swift in Sources */,
+				4B5648E16E7D499E8AFF6703 /* ZipSearchFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +390,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F1359020EF84B05B89944FC /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-syntax.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 509.0.2;
+			};
+		};
+		E2A3190E9D034BEA90016441 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48FF738BACB64A10A1920D31 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2A3190E9D034BEA90016441 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		F66DEC50D49449C7A33DAC68 /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F1359020EF84B05B89944FC /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A01234567890ABC3 /* Project object */;
 }
