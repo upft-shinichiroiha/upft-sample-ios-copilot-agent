@@ -3,7 +3,7 @@ import Foundation
 import FoundationNetworking
 #endif
 
-public struct ZipApi {
+public class ZipApi {
     public static func searchAddress(zipCode: String) async -> String {
         return await withCheckedContinuation { (continuation: CheckedContinuation<String, Never>) in
             let urlString = "https://zipcloud.ibsnet.co.jp/api/search?zipcode=\(zipCode)"
