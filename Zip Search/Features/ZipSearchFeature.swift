@@ -13,6 +13,7 @@ struct ZipSearchFeature {
     enum Action {
         case zipCode(String)
         case searchResponse(String)
+        case postalCodeChanged(String)
     }
     
     var body: some ReducerOf<Self> {
@@ -31,6 +32,16 @@ struct ZipSearchFeature {
             case let .searchResponse(result):
                 state.isLoading = false
                 state.resultText = result
+                return .none
+                
+            case let .postalCodeChanged(newValue):
+                // 数字のみ許可し、7桁まで制限
+                let filtered = newValue.filter { $0.isNumber }
+                if filtered.count <= 7 {
+                    state.postalCode = filtered
+                } else {
+                    state.postalCode = String(filtered.prefix(7))
+                }
                 return .none
             }
         }

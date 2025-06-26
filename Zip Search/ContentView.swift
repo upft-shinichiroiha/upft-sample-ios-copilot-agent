@@ -16,8 +16,6 @@ struct ContentView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            @State var postalCode: String = ""
-            
             VStack(spacing: 20) {
                 Text("Zip Search")
                     .font(.largeTitle)
@@ -28,22 +26,16 @@ struct ContentView: View {
                     Text("郵便番号（7桁）")
                         .font(.headline)
                     
-                    TextField("例: 7830060", text: $postalCode)
+                    TextField("例: 7830060", text: viewStore.binding(
+                        get: \.postalCode,
+                        send: { .postalCodeChanged($0) }
+                    ))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
-                        .onChange(of: postalCode) { _, newValue in
-                            // 数字のみ許可し、7桁まで制限
-                            let filtered = newValue.filter { $0.isNumber }
-                            if filtered.count <= 7 {
-                                postalCode = filtered
-                            } else {
-                                postalCode = String(filtered.prefix(7))
-                            }
-                        }
                 }
                 
                 Button(action: { 
-                    viewStore.send(.zipCode(postalCode))
+                    viewStore.send(.zipCode(viewStore.postalCode))
                 }) {
                     if viewStore.isLoading {
                         HStack {
@@ -60,9 +52,9 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 50)
-                .background(isValidPostalCode(postalCode) && !viewStore.isLoading ? Color.blue : Color.gray)
+                .background(isValidPostalCode(viewStore.postalCode) && !viewStore.isLoading ? Color.blue : Color.gray)
                 .cornerRadius(8)
-                .disabled(!isValidPostalCode(postalCode) || viewStore.isLoading)
+                .disabled(!isValidPostalCode(viewStore.postalCode) || viewStore.isLoading)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("結果")
