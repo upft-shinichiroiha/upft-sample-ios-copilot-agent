@@ -1,8 +1,4 @@
 import Foundation
-// Note: This requires ComposableArchitecture to be properly configured in Xcode project
-// For now, providing the structure that would work with TCA 1.17.1
-
-/*
 import ComposableArchitecture
 
 @Reducer
@@ -38,22 +34,5 @@ struct ZipSearchFeature {
                 return .none
             }
         }
-    }
-}
-*/
-
-// Simplified version for demonstration without TCA dependency
-public struct ZipSearchFeature {
-    public struct State: Equatable {
-        public var isLoading: Bool = false
-        public var resultText: String = "結果がここに表示されます"
-        public var postalCode: String = ""
-        
-        public init() {}
-    }
-    
-    public enum Action {
-        case zipCode(String)
-        case searchResponse(String)
     }
 }
